@@ -64,20 +64,20 @@ const material = new THREE.ShaderMaterial({
     side: THREE.DoubleSide,
     uniforms: {
         uTime: {value: 0},
-        uBigWavesSpeed: {value: 0.1 },
+        uBigWavesSpeed: {value: 1 },
 
 
         uBigWavesElevation: {value: 0.2},
         uBigWavesFrequency: {value: new THREE.Vector2(4, 1.5)},
 
         uSmallWavesElevation: { value: 0.15 },
-        uSmallWavesFrequency: { value: 3 },
+        uSmallWavesFrequency: { value: 0.3 },
         uSmallWavesSpeed: { value: 0.2 },
 
         uDepthColor: {value: new THREE.Color(debugObject.depthColor)},
         uSurfaceColor: {value: new THREE.Color(debugObject.surfaceColor)},
         uColorOffset: { value: 0.08 },
-        uColorMultiplier: { value: 5 }
+        uColorMultiplier: { value: 0.5 }
     }
 })
 
@@ -86,12 +86,11 @@ gui.add(material.uniforms.uBigWavesSpeed, "value").min(0).max(2).step(0.001).nam
 gui.add(material.uniforms.uBigWavesElevation, "value").min(0).max(1).step(0.001).name("uBigWavesElevation");
 gui.add(material.uniforms.uBigWavesFrequency.value, "x").min(0).max(10).step(0.001).name("uBigWavesFrequencyX");
 gui.add(material.uniforms.uBigWavesFrequency.value, "y").min(0).max(10).step(0.001).name("uBigWavesFrequencyY");
-gui.add(material.uniforms.uSmallWavesElevation, 'value').min(0).max(1).step(0.001).name('uSmallWavesElevation')
-gui.add(material.uniforms.uSmallWavesFrequency, 'value').min(0).max(5).step(0.001).name('uSmallWavesFrequency')
-gui.add(material.uniforms.uSmallWavesSpeed, 'value').min(0).max(1).step(0.001).name('uSmallWavesSpeed')
+gui.add(material.uniforms.uSmallWavesFrequency, 'value').min(0).max(0.5).step(0.001).name('uSmallWavesFrequency')
+gui.add(material.uniforms.uSmallWavesSpeed, 'value').min(0).max(0.5).step(0.001).name('uSmallWavesSpeed')
 
 gui.add(material.uniforms.uColorOffset, 'value').min(0).max(1).step(0.001).name('uColorOffset')
-gui.add(material.uniforms.uColorMultiplier, 'value').min(0).max(10).step(0.001).name('uColorMultiplier')
+gui.add(material.uniforms.uColorMultiplier, 'value').min(0).max(2).step(0.001).name('uColorMultiplier')
 
 
 

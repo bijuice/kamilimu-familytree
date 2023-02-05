@@ -621,7 +621,7 @@ const material = new _three.ShaderMaterial({
             value: 0
         },
         uBigWavesSpeed: {
-            value: 0.1
+            value: 1
         },
         uBigWavesElevation: {
             value: 0.2
@@ -633,7 +633,7 @@ const material = new _three.ShaderMaterial({
             value: 0.15
         },
         uSmallWavesFrequency: {
-            value: 3
+            value: 0.3
         },
         uSmallWavesSpeed: {
             value: 0.2
@@ -648,7 +648,7 @@ const material = new _three.ShaderMaterial({
             value: 0.08
         },
         uColorMultiplier: {
-            value: 5
+            value: 0.5
         }
     }
 });
@@ -656,11 +656,10 @@ gui.add(material.uniforms.uBigWavesSpeed, "value").min(0).max(2).step(0.001).nam
 gui.add(material.uniforms.uBigWavesElevation, "value").min(0).max(1).step(0.001).name("uBigWavesElevation");
 gui.add(material.uniforms.uBigWavesFrequency.value, "x").min(0).max(10).step(0.001).name("uBigWavesFrequencyX");
 gui.add(material.uniforms.uBigWavesFrequency.value, "y").min(0).max(10).step(0.001).name("uBigWavesFrequencyY");
-gui.add(material.uniforms.uSmallWavesElevation, "value").min(0).max(1).step(0.001).name("uSmallWavesElevation");
-gui.add(material.uniforms.uSmallWavesFrequency, "value").min(0).max(5).step(0.001).name("uSmallWavesFrequency");
-gui.add(material.uniforms.uSmallWavesSpeed, "value").min(0).max(1).step(0.001).name("uSmallWavesSpeed");
+gui.add(material.uniforms.uSmallWavesFrequency, "value").min(0).max(0.5).step(0.001).name("uSmallWavesFrequency");
+gui.add(material.uniforms.uSmallWavesSpeed, "value").min(0).max(0.5).step(0.001).name("uSmallWavesSpeed");
 gui.add(material.uniforms.uColorOffset, "value").min(0).max(1).step(0.001).name("uColorOffset");
-gui.add(material.uniforms.uColorMultiplier, "value").min(0).max(10).step(0.001).name("uColorMultiplier");
+gui.add(material.uniforms.uColorMultiplier, "value").min(0).max(2).step(0.001).name("uColorMultiplier");
 const mesh = new _three.Mesh(geometry, material);
 mesh.rotation.x = -Math.PI * 0.5;
 scene.add(mesh);
