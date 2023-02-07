@@ -45,7 +45,7 @@ window.addEventListener('resize', () =>
 })
 
 // Debug
-const gui = new dat.GUI({ width: 250 })
+const gui = new dat.GUI({ width: 350 })
 const debugObject = {}
 
 //objects
